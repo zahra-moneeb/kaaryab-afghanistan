@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "CodeToInspire",
+    "logo": "/logos/codetoinspire.png",
+    "opportunityType": "Job",
+    "category": "Technology",
+    "type": "Full-time",
+    "location": "Herat, Afghanistan",
+    "isRemote": false,
+    "salary": "$800 - $1200 / month",
+    "experience": "1+ Years",
+    "description": "CodeToInspire is looking for a passionate Frontend Developer to build responsive web applications using modern JavaScript technologies.",
+    "requirements": [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Git & GitHub"
+    ],
+    "benefits": [
+      "Flexible working hours",
+      "Health insurance",
+      "Professional development",
+      "Friendly team environment"
+    ],
+    "deadline": "2026-08-20",
+    "postedAt": "2026-07-10",
+    "applyLink": "https://www.codetoinspire.org/careers/frontend-developer",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Backend Developer",
+    "company": "Afghan Wireless",
+    "logo": "/logos/afghan-wireless.png",
+    "opportunityType": "Job",
+    "category": "Technology",
+    "type": "Full-time",
+    "location": "Kabul, Afghanistan",
+    "isRemote": false,
+    "salary": "$900 - $1400 / month",
+    "experience": "2+ Years",
+    "description": "Develop and maintain secure backend services and REST APIs using Node.js and Express.",
+    "requirements": [
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "REST API",
+      "Git"
+    ],
+    "benefits": [
+      "Annual bonus",
+      "Health insurance",
+      "Paid leave",
+      "Training opportunities"
+    ],
+    "deadline": "2026-08-25",
+    "postedAt": "2026-07-12",
+    "applyLink": "https://example.com/backend-developer",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "company": "Roshan",
+    "logo": "/logos/roshan.png",
+    "opportunityType": "Job",
+    "category": "Design",
+    "type": "Full-time",
+    "location": "Kabul, Afghanistan",
+    "isRemote": false,
+    "salary": "$700 - $1000 / month",
+    "experience": "2+ Years",
+    "description": "Design modern, user-friendly web and mobile interfaces while collaborating with developers and product managers.",
+    "requirements": [
+      "Figma",
+      "Adobe XD",
+      "Wireframing",
+      "Prototyping"
+    ],
+    "benefits": [
+      "Flexible schedule",
+      "Career growth",
+      "Modern office",
+      "Learning budget"
+    ],
+    "deadline": "2026-08-18",
+    "postedAt": "2026-07-09",
+    "applyLink": "https://example.com/uiux-designer",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Graphic Designer",
+    "company": "Aga Khan Foundation",
+    "logo": "/logos/akf.png",
+    "opportunityType": "Job",
+    "category": "Design",
+    "type": "Contract",
+    "location": "Herat, Afghanistan",
+    "isRemote": false,
+    "salary": "$600 - $900 / month",
+    "experience": "1+ Years",
+    "description": "Create engaging visual materials for educational and community development projects.",
+    "requirements": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Branding",
+      "Creativity"
+    ],
+    "benefits": [
+      "Flexible contract",
+      "Professional development",
+      "Supportive team"
+    ],
+    "deadline": "2026-08-30",
+    "postedAt": "2026-07-11",
+    "applyLink": "https://example.com/graphic-designer",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Mobile App Developer",
+    "company": "UNDP Afghanistan",
+    "logo": "/logos/undp.png",
+    "opportunityType": "Job",
+    "category": "Technology",
+    "type": "Full-time",
+    "location": "Kabul, Afghanistan",
+    "isRemote": true,
+    "salary": "$1000 - $1500 / month",
+    "experience": "2+ Years",
+    "description": "Build cross-platform mobile applications using Flutter while working with an international development team.",
+    "requirements": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "REST API"
+    ],
+    "benefits": [
+      "Remote work option",
+      "International team",
+      "Health insurance",
+      "Paid holidays"
+    ],
+    "deadline": "2026-09-05",
+    "postedAt": "2026-07-13",
+    "applyLink": "https://example.com/mobile-developer",
+    "featured": true
+  }
+]

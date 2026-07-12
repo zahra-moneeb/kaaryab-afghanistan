@@ -1,5 +1,6 @@
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
+import OpportunitiesGrid from "@/components/opportunities/OpportunitiesGrid";
 import { MapPin } from "lucide-react";
 
 const jobs = [
@@ -102,8 +103,11 @@ export default function HomePage() {
                   </Button>
                 </div>
             </div>
-
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <OpportunitiesGrid
+          featuredOnly
+          limit={3}
+        />
+            {/* <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {jobs.map((job) => (
                 <div
                   key={job.id}
@@ -129,7 +133,7 @@ export default function HomePage() {
                   </Button>
                 </div>
               ))}
-            </div>
+            </div> */}
           </Container>
         </section>
       </div>

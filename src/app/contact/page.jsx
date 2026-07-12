@@ -5,7 +5,7 @@ import FAQ from "@/components/contact/FAQ";
 
 export default function ContactPage() {
   return (
-    <main>
+    <main >
       <ContactHero />
       <ContactInfo />
       <ContactForm />
