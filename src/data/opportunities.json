@@ -1,152 +1,124 @@
 [
   {
     "id": 1,
-    "title": "Frontend Developer",
-    "company": "CodeToInspire",
-    "logo": "/logos/codetoinspire.png",
-    "opportunityType": "Job",
+    "title": "Frontend Developer Internship",
+    "company": "GMSPro Afghanistan",
+    "logo": "/images/companies/gmspro.png",
+    "opportunityType": "Internship",
     "category": "Technology",
-    "type": "Full-time",
-    "location": "Herat, Afghanistan",
+    "type": "Internship",
+
+    "location": "Kabul, Afghanistan",
     "isRemote": false,
-    "salary": "$800 - $1200 / month",
-    "experience": "1+ Years",
-    "description": "CodeToInspire is looking for a passionate Frontend Developer to build responsive web applications using modern JavaScript technologies.",
+
+    "salary": "Unpaid / Experience Based",
+    "experience": "Beginner",
+
+    "description": "A great opportunity for students and junior developers to gain real-world experience in frontend development using modern technologies such as React, TypeScript, and Tailwind CSS.",
+
     "requirements": [
-      "React.js",
-      "Next.js",
-      "Tailwind CSS",
-      "Git & GitHub"
+      "Basic knowledge of HTML, CSS, and JavaScript",
+      "Understanding of React fundamentals",
+      "Basic TypeScript knowledge",
+      "Willingness to learn and work in a team"
     ],
+
     "benefits": [
-      "Flexible working hours",
-      "Health insurance",
-      "Professional development",
-      "Friendly team environment"
+      "Professional work experience",
+      "Certificate of completion",
+      "Opportunity to improve technical skills",
+      "Real-world project experience"
     ],
+
+    "companyDescription": "GMSPro is a technology company focused on building modern digital solutions and creating learning opportunities for young developers.",
+
     "deadline": "2026-08-20",
-    "postedAt": "2026-07-10",
-    "applyLink": "https://www.codetoinspire.org/careers/frontend-developer",
+    "postedAt": "2026-07-01",
+
+    "applyLink": "https://example.com/apply",
+
     "featured": true
   },
+
+
   {
     "id": 2,
-    "title": "Backend Developer",
-    "company": "Afghan Wireless",
-    "logo": "/logos/afghan-wireless.png",
-    "opportunityType": "Job",
-    "category": "Technology",
-    "type": "Full-time",
-    "location": "Kabul, Afghanistan",
-    "isRemote": false,
-    "salary": "$900 - $1400 / month",
-    "experience": "2+ Years",
-    "description": "Develop and maintain secure backend services and REST APIs using Node.js and Express.",
+    "title": "Python Programming Scholarship",
+    "company": "Afghan Tech Academy",
+    "logo": "/images/companies/academy.png",
+    "opportunityType": "Scholarship",
+    "category": "Programming",
+    "type": "Scholarship",
+
+    "location": "Online",
+    "isRemote": true,
+
+    "salary": "Free Program",
+    "experience": "Beginner",
+
+    "description": "A scholarship program designed for Afghan students who want to learn Python programming and improve their software development skills through structured online education.",
+
     "requirements": [
-      "Node.js",
-      "Express.js",
-      "PostgreSQL",
-      "REST API",
-      "Git"
+      "Basic computer skills",
+      "Interest in programming",
+      "Commitment to complete the course"
     ],
+
     "benefits": [
-      "Annual bonus",
-      "Health insurance",
-      "Paid leave",
-      "Training opportunities"
+      "Free learning materials",
+      "Programming certificate",
+      "Mentorship support",
+      "Online flexible learning"
     ],
-    "deadline": "2026-08-25",
-    "postedAt": "2026-07-12",
-    "applyLink": "https://example.com/backend-developer",
+
+    "companyDescription": "Afghan Tech Academy provides online educational programs to help young people develop digital skills and prepare for technology careers.",
+
+    "deadline": "2026-09-10",
+    "postedAt": "2026-07-05",
+
+    "applyLink": "https://example.com/apply",
+
     "featured": true
   },
+
+
   {
     "id": 3,
-    "title": "UI/UX Designer",
-    "company": "Roshan",
-    "logo": "/logos/roshan.png",
-    "opportunityType": "Job",
+    "title": "Remote UI/UX Design Course",
+    "company": "Design Hub",
+    "logo": "/images/companies/designhub.png",
+    "opportunityType": "Course",
     "category": "Design",
-    "type": "Full-time",
-    "location": "Kabul, Afghanistan",
-    "isRemote": false,
-    "salary": "$700 - $1000 / month",
-    "experience": "2+ Years",
-    "description": "Design modern, user-friendly web and mobile interfaces while collaborating with developers and product managers.",
-    "requirements": [
-      "Figma",
-      "Adobe XD",
-      "Wireframing",
-      "Prototyping"
-    ],
-    "benefits": [
-      "Flexible schedule",
-      "Career growth",
-      "Modern office",
-      "Learning budget"
-    ],
-    "deadline": "2026-08-18",
-    "postedAt": "2026-07-09",
-    "applyLink": "https://example.com/uiux-designer",
-    "featured": true
-  },
-  {
-    "id": 4,
-    "title": "Graphic Designer",
-    "company": "Aga Khan Foundation",
-    "logo": "/logos/akf.png",
-    "opportunityType": "Job",
-    "category": "Design",
-    "type": "Contract",
-    "location": "Herat, Afghanistan",
-    "isRemote": false,
-    "salary": "$600 - $900 / month",
-    "experience": "1+ Years",
-    "description": "Create engaging visual materials for educational and community development projects.",
-    "requirements": [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Branding",
-      "Creativity"
-    ],
-    "benefits": [
-      "Flexible contract",
-      "Professional development",
-      "Supportive team"
-    ],
-    "deadline": "2026-08-30",
-    "postedAt": "2026-07-11",
-    "applyLink": "https://example.com/graphic-designer",
-    "featured": false
-  },
-  {
-    "id": 5,
-    "title": "Mobile App Developer",
-    "company": "UNDP Afghanistan",
-    "logo": "/logos/undp.png",
-    "opportunityType": "Job",
-    "category": "Technology",
-    "type": "Full-time",
-    "location": "Kabul, Afghanistan",
+    "type": "Course",
+
+    "location": "Remote",
     "isRemote": true,
-    "salary": "$1000 - $1500 / month",
-    "experience": "2+ Years",
-    "description": "Build cross-platform mobile applications using Flutter while working with an international development team.",
+
+    "salary": "Free Course",
+    "experience": "Beginner",
+
+    "description": "An online course focused on modern UI/UX design principles, user research, wireframing, prototyping, and professional design tools.",
+
     "requirements": [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "REST API"
+      "Creativity and interest in design",
+      "Basic computer knowledge",
+      "Willingness to practice design skills"
     ],
+
     "benefits": [
-      "Remote work option",
-      "International team",
-      "Health insurance",
-      "Paid holidays"
+      "Portfolio projects",
+      "Design certificate",
+      "Remote learning",
+      "Practical design experience"
     ],
-    "deadline": "2026-09-05",
-    "postedAt": "2026-07-13",
-    "applyLink": "https://example.com/mobile-developer",
-    "featured": true
+
+    "companyDescription": "Design Hub offers practical courses for people interested in creative and digital careers.",
+
+    "deadline": "2026-10-01",
+    "postedAt": "2026-07-10",
+
+    "applyLink": "https://example.com/apply",
+
+    "featured": false
   }
 ]

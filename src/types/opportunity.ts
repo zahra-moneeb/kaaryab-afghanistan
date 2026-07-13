@@ -17,4 +17,5 @@ export interface Opportunity {
   postedAt: string;
   applyLink: string;
   featured: boolean;
+  companyDescription: string;
 }

@@ -107,33 +107,7 @@ export default function HomePage() {
           featuredOnly
           limit={3}
         />
-            {/* <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              {jobs.map((job) => (
-                <div
-                  key={job.id}
-                  className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white/15"
-                >
-                  <div className="mb-4 inline-flex rounded-full bg-sky-400/20 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-sky-200 uppercase">
-                    {job.company}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white">
-                    {job.title}
-                  </h3>
-
-                  <p className="mt-2 text-sm text-slate-300">
-                    {job.company}
-                  </p>
-
-                  <p className="mt-4 text-sm text-slate-400">
-                    <MapPin className="inline-block h-5 w-5 " /> {job.location}
-                  </p>
-
-                  <Button variant="primary" className="mt-5 w-full">
-                    View Details
-                  </Button>
-                </div>
-              ))}
-            </div> */}
+ 
           </Container>
         </section>
       </div>

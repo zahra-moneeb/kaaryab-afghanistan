@@ -27,7 +27,10 @@ export default function OpportunitiesGrid({
         }
 
         const data = await response.json();
+        // console.log("API Response:", data);
         setOpportunities(data);
+        // console.log("Featured Only:", featuredOnly);
+        // console.log("Limit:", limit);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
