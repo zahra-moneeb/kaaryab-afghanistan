@@ -1,6 +1,9 @@
+"use client";
+
 import { Opportunity } from "@/types/opportunity";
-import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
+import { MapPin, Calendar, ArrowUpRight, Bookmark } from "lucide-react";
 import Link from "next/link";
+import { useSaved } from "@/context/SavedContext";
 
 type OpportunityCardProps = {
   opportunity: Opportunity;
@@ -25,15 +28,25 @@ const typeStyles: Record<string, { badge: string; icon: string }> = {
   },
 };
 
-export default function OpportunityCard({
-  opportunity,
-}: OpportunityCardProps) {
+export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
   const style =
     typeStyles[opportunity.type] ??
     ({
       badge: "bg-violet-400/15 text-violet-200 border-violet-400/20",
       icon: "text-violet-300",
     } as const);
+
+  const { saveOpportunity, removeOpportunity, isSaved } = useSaved();
+
+  const saved = isSaved(opportunity.id);
+
+  function handleSave() {
+    if (saved) {
+      removeOpportunity(opportunity.id);
+    } else {
+      saveOpportunity(opportunity);
+    }
+  }
 
   return (
     <div className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-6 shadow-xl shadow-black/20 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.1]">
@@ -64,20 +77,35 @@ export default function OpportunityCard({
         </div>
       </div>
 
-      {/* Spacer pushes the button to the bottom so cards align in a grid */}
+      {/* Spacer pushes the buttons to the bottom so cards align in a grid */}
       <div className="flex-1" />
 
-      {/* Button — glass-tinted to sit on the dark gradient */}
-      <Link
-        href={`/opportunities/${opportunity.id}`}
-        className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:border-white/25 hover:bg-white/20 active:scale-98"
-      >
-        View Details
-        <ArrowUpRight
-          size={14}
-          className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-        />
-      </Link>
+      {/* Buttons — same row, equal width */}
+      <div className="mt-6 flex items-center gap-2">
+        <Link
+          href={`/opportunities/${opportunity.id}`}
+          className="group/link inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:border-white/25 hover:bg-white/20 active:scale-98"
+        >
+          View Details
+          <ArrowUpRight
+            size={14}
+            className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+          />
+        </Link>
+
+        <button
+          onClick={handleSave}
+          aria-pressed={saved}
+          aria-label={saved ? "Remove from saved" : "Save opportunity"}
+          className={`flex shrink-0 items-center justify-center rounded-lg border p-2 backdrop-blur-sm transition-all duration-200 active:scale-98 ${
+            saved
+              ? "border-white/25 bg-white/20 text-white"
+              : "border-white/15 bg-white/10 text-white/80 hover:border-white/25 hover:bg-white/20 hover:text-white"
+          }`}
+        >
+          <Bookmark size={18} fill={saved ? "currentColor" : "none"} />
+        </button>
+      </div>
     </div>
   );
 }

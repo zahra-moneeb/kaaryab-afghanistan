@@ -6,6 +6,7 @@ import { Opportunity } from "@/types/opportunity";
 import Benefits from "@/components/opportunity-details/Benefits";
 import CompanyInfo from "@/components/opportunity-details/CompanyInfo";
 import ApplyCard from "@/components/opportunity-details/ApplyCard";
+import Description from "@/components/opportunity-details/Description";
 
 
 async function getOpportunity(id: string) {
@@ -44,10 +45,10 @@ export default async function OpportunityDetailsPage({
   }
 
 
-  return (
-      <section className="mx-auto max-w-6xl space-y-8 px-6 py-12">
+return (
+  <section className="mx-auto max-w-7xl space-y-8 px-6 py-12">
 
-    <DetailHero
+    <DetailHero 
       opportunity={opportunity}
     />
 
@@ -56,24 +57,77 @@ export default async function OpportunityDetailsPage({
       opportunity={opportunity}
     />
 
-    <Requirements 
-       opportunity={opportunity}
-   />
 
-   <Benefits
-    opportunity={opportunity}
-    />
+    <div
+      className="
+      grid
+      gap-8
+      lg:grid-cols-3
+      "
+    >
 
-    <CompanyInfo 
-      opportunity={opportunity}
-    />   
 
-    <ApplyCard
-      opportunity={opportunity}
-    />
+      {/* Main Content */}
+
+      <div
+        className="
+        space-y-8
+        lg:col-span-2
+        "
+      >
+
+        <Description
+          opportunity={opportunity}
+        />
+
+
+        <Requirements
+          opportunity={opportunity}
+        />
+
+
+        <Benefits
+          opportunity={opportunity}
+        />
+
+
+        <CompanyInfo
+          opportunity={opportunity}
+        />
+
+
+      </div>
+
+
+
+      {/* Sidebar */}
+
+      <aside
+        className="
+        lg:col-span-1
+        "
+      >
+
+        <div
+          className="
+          sticky
+          top-24
+          "
+        >
+
+          <ApplyCard
+            opportunity={opportunity}
+          />
+
+        </div>
+
+
+      </aside>
+
+
+    </div>
 
 
   </section>
-    
-  );
+);
 }
