@@ -4,18 +4,26 @@ import { useEffect, useState } from "react";
 import { AlertCircle } from "lucide-react";
 import OpportunityCard from "./OpportunityCard";
 
+
 type OpportunitiesGridProps = {
   limit?: number;
   featuredOnly?: boolean;
+
+  search: string;
+  type: string;
 };
 
 export default function OpportunitiesGrid({ 
       limit, 
-      featuredOnly = false, 
-      } : OpportunitiesGridProps) {
+      featuredOnly = false,
+      search,
+      type,
+      }: OpportunitiesGridProps) {
   const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+
 
   useEffect(() => {
     async function fetchOpportunities() {
@@ -27,10 +35,9 @@ export default function OpportunitiesGrid({
         }
 
         const data = await response.json();
-        // console.log("API Response:", data);
+        
         setOpportunities(data);
-        // console.log("Featured Only:", featuredOnly);
-        // console.log("Limit:", limit);
+        
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -45,10 +52,31 @@ export default function OpportunitiesGrid({
     fetchOpportunities();
   }, []);
 
+  const filteredOpportunities = opportunities.filter((opportunity) => {
 
-  const displayedOpportunities = featuredOnly
-  ? opportunities.filter((opportunity) => opportunity.featured)
-  : opportunities;
+  const matchesSearch =
+    opportunity.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+
+  const matchesType =
+    type === "" ||
+    opportunity.type === type;
+
+
+  return (
+    matchesSearch &&
+    matchesType
+  );
+
+});
+
+const displayedOpportunities = featuredOnly
+  ? filteredOpportunities.filter(
+      (opportunity) => opportunity.featured
+    )
+  : filteredOpportunities;
 
 const finalOpportunities = limit
   ? displayedOpportunities.slice(0, limit)
@@ -90,13 +118,14 @@ const finalOpportunities = limit
           </div>
         )}
 
-        {!loading && !error && opportunities.length === 0 && (
+        {!loading && !error && finalOpportunities.length === 0 && (
           <div className="mx-auto max-w-md rounded-2xl border border-white/10 bg-white/5 p-8 text-center text-white/70 backdrop-blur-xl">
-            No opportunities found right now. Check back soon.
+            No matching opportunities found.
           </div>
         )}
 
-        {!loading && !error && opportunities.length > 0 && (
+
+        {!loading && !error && finalOpportunities.length > 0 && (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {finalOpportunities.map((opportunity) => (
               <OpportunityCard key={opportunity.id} opportunity={opportunity} />

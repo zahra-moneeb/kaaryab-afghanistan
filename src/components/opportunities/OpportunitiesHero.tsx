@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+
 import {
   Search,
   Sparkles,
@@ -11,6 +11,13 @@ import {
   Building2,
 } from "lucide-react";
 
+type OpportunitiesHeroProps = {
+  search: string;
+  type: string;
+  onSearchChange: (value: string) => void;
+  onTypeChange: (value: string) => void;
+};
+
 const filters = [
   { label: "All", icon: LayoutGrid },
   { label: "Jobs", icon: Briefcase },
@@ -19,8 +26,15 @@ const filters = [
   { label: "Internships", icon: Building2 },
 ];
 
-export default function OpportunitiesHero() {
-  const [activeFilter, setActiveFilter] = useState("All");
+export default function OpportunitiesHero(
+  {
+  search,
+  type,
+  onSearchChange,
+  onTypeChange,
+}: OpportunitiesHeroProps){
+ 
+  
 
   return (
     <section className="relative overflow-hidden py-24" >
@@ -56,6 +70,8 @@ export default function OpportunitiesHero() {
           <Search size={20} className="ml-2 shrink-0 text-white/50" />
           <input
             type="text"
+             value={search}
+             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search opportunities..."
             className="w-full bg-transparent text-white outline-none placeholder:text-white/40"
           />
@@ -70,13 +86,20 @@ export default function OpportunitiesHero() {
         {/* Filter section — glass pills with icons */}
         <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-2.5">
           {filters.map(({ label, icon: Icon }) => {
-            const isActive = activeFilter === label;
+            const isActive =   (label === "All" && type === "") || type === label.slice(0, -1);
+                        
 
             return (
               <button
                 key={label}
                 type="button"
-                onClick={() => setActiveFilter(label)}
+                onClick={() => {
+                    if(label === "All") {
+                      onTypeChange("");
+                    } else {
+                      onTypeChange(label.slice(0, -1));
+                    }
+                  }}
                 aria-pressed={isActive}
                 className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium backdrop-blur-md transition-all duration-200 active:scale-98 ${
                   isActive

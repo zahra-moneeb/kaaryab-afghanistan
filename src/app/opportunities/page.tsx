@@ -1,8 +1,17 @@
+"use client";
+
 import OpportunitiesHero from "@/components/opportunities/OpportunitiesHero";
-// import OpportunitiesFilters from "@/components/opportunities/OpportunitiesFilters";
+
 import OpportunitiesGrid from "@/components/opportunities/OpportunitiesGrid";
+import { useState } from "react";
 
 export default function OpportunitiesPage() {
+  
+    const [search, setSearch] = useState("");
+     const [type, setType] = useState("");
+
+  
+
   return (
     <main className="relative overflow-hidden bg-gradient-to-br from-indigo-800 via-indigo-900 to-violet-950 dark:from-zinc-950 dark:via-violet-950/60 dark:to-black">
       {/* Shared grid texture for the whole page */}
@@ -12,9 +21,18 @@ export default function OpportunitiesPage() {
       />
 
       <div className="relative">
-        <OpportunitiesHero />
-        {/* <OpportunitiesFilters /> */}
-        <OpportunitiesGrid />
+        <OpportunitiesHero 
+            search={search}
+            type={type}
+            onSearchChange={setSearch}
+            onTypeChange={setType}
+        />
+       
+        <OpportunitiesGrid 
+            search={search}
+            type={type}
+            
+        />
       </div>
     </main>
   );
