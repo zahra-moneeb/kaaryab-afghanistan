@@ -32,7 +32,7 @@ export default function Requirements({ opportunity }: RequirementsProps) {
             </div>
 
             <p className="leading-7 text-slate-700 dark:text-zinc-300">
-              {item}
+              {item.value}
             </p>
           </div>
         ))}

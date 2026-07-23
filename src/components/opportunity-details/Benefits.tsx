@@ -37,7 +37,7 @@ export default function Benefits({ opportunity }: BenefitsProps) {
               <Sparkles size={20} />
             </div>
 
-            <p className="text-slate-700 dark:text-zinc-300">{benefit}</p>
+            <p className="text-slate-700 dark:text-zinc-300">{benefit.value}</p>
           </div>
         ))}
       </div>

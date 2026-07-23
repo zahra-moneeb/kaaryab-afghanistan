@@ -52,12 +52,18 @@ export default function OpportunitiesGrid({
     fetchOpportunities();
   }, []);
 
+
+  // filter
   const filteredOpportunities = opportunities.filter((opportunity) => {
 
+  const title =
+    opportunity.title?.toLowerCase() || "";
+
+
   const matchesSearch =
-    opportunity.title
-      .toLowerCase()
-      .includes(search.toLowerCase());
+    title.includes(
+      search?.toLowerCase()
+    );
 
 
   const matchesType =

@@ -1,114 +1,381 @@
 "use client";
 
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import {
+  opportunitySchema,
+  OpportunityFormData,
+} from "@/schemas/opportunitySchema";
+
+import FormInput from "@/components/ui/FormInput";
+import FormTextarea from "@/components/ui/FormTextarea";
+import FormSelect from "@/components/ui/FormSelect";
+import DynamicListField from "@/components/ui/DynamicListField";
 
 export default function OpportunityForm() {
-  const [form, setForm] = useState({
-    title: "",
-    company: "",
-    type: "job",
-    location: "",
-    description: "",
-    deadline: "",
-    applyLink: "",
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<OpportunityFormData>({
+    resolver: zodResolver(opportunitySchema),
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Opportunity Data:", form);
-    // بعداً API اینجا وصل می‌شود
-  };
+  //form submit
+const onSubmit = async (
+  data: OpportunityFormData
+) => {
+ console.log("Submit clicked");
+  console.log(data);
+  try {
+
+    const response = await fetch(
+      "/api/opportunities",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify(data),
+      }
+    );
+
+
+    if (!response.ok) {
+      throw new Error(
+        "Failed to create opportunity"
+      );
+    }
+
+
+    const newOpportunity =
+      await response.json();
+
+
+    console.log(
+      "Created:",
+      newOpportunity
+    );
+
+
+  } catch (error) {
+
+    console.error(error);
+
+  }
+
+};
 
   return (
-    <section className="py-20">
-      <div className="mx-auto max-w-3xl px-6">
+    
+   
+  <form
+    // onSubmit={handleSubmit(onSubmit)}
+    // className="space-y-6"
 
-        <h2 className="text-3xl font-bold text-slate-900">
-          Add New Opportunity
-        </h2>
+      onSubmit={handleSubmit(
+    onSubmit,
+    (errors) => {
+      console.log("Validation Errors:", errors);
+    }
+  )}
+  >
 
-        <p className="mt-4 text-slate-600">
-          Create jobs, scholarships, courses or internships for users.
-        </p>
+    <FormInput
+      label="Opportunity Title"
+      name="title"
 
-        <form onSubmit={handleSubmit} className="mt-10 space-y-5">
+      register={register}
+      error={errors.title}
 
-          <input
-            name="title"
-            placeholder="Title"
-            value={form.title}
-            onChange={handleChange}
-            className="w-full rounded-xl border p-3"
-          />
+      placeholder="Enter opportunity title"
 
-          <input
-            name="company"
-            placeholder="Company / Organization"
-            value={form.company}
-            onChange={handleChange}
-            className="w-full rounded-xl border p-3"
-          />
+      required
+    />
 
-          <select
-            name="type"
-            value={form.type}
-            onChange={handleChange}
-            className="w-full rounded-xl border p-3"
-          >
-            <option value="job">Job</option>
-            <option value="scholarship">Scholarship</option>
-            <option value="course">Course</option>
-            <option value="internship">Internship</option>
-          </select>
 
-          <input
-            name="location"
-            placeholder="Location"
-            value={form.location}
-            onChange={handleChange}
-            className="w-full rounded-xl border p-3"
-          />
+    <FormInput
+      label="Company Name"
+      name="company"
 
-          <textarea
-            name="description"
-            placeholder="Description"
-            value={form.description}
-            onChange={handleChange}
-            className="w-full rounded-xl border p-3"
-            rows={5}
-          />
+      register={register}
+      error={errors.company}
 
-          <input
-            name="deadline"
-            type="date"
-            value={form.deadline}
-            onChange={handleChange}
-            className="w-full rounded-xl border p-3"
-          />
+      placeholder="Enter company name"
 
-          <input
-            name="applyLink"
-            placeholder="Apply Link"
-            value={form.applyLink}
-            onChange={handleChange}
-            className="w-full rounded-xl border p-3"
-          />
+      required
+    />
 
-          <button
-            type="submit"
-            className="w-full rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700"
-          >
-            Create Opportunity
-          </button>
+    <FormInput
+  label="Company Logo"
+  name="logo"
 
-        </form>
-      </div>
-    </section>
+  register={register}
+  error={errors.logo}
+
+  placeholder="/images/companies/logo.png"
+/>
+
+
+<FormSelect
+  label="Opportunity Type"
+  name="opportunityType"
+
+  register={register}
+  error={errors.opportunityType}
+
+  options={[
+    {
+      label: "Internship",
+      value: "Internship",
+    },
+
+    {
+      label: "Job",
+      value: "Job",
+    },
+
+    {
+      label: "Scholarship",
+      value: "Scholarship",
+    },
+
+    {
+      label: "Course",
+      value: "Course",
+    },
+  ]}
+
+  required
+/>
+
+
+
+<FormSelect
+  label="Category"
+  name="category"
+
+  register={register}
+  error={errors.category}
+
+  options={[
+    {
+      label: "Technology",
+      value: "Technology",
+    },
+
+    {
+      label: "Design",
+      value: "Design",
+    },
+
+    {
+      label: "Business",
+      value: "Business",
+    },
+
+    {
+      label: "Education",
+      value: "Education",
+    },
+  ]}
+
+  required
+/>
+
+
+
+<FormSelect
+  label="Type"
+  name="type"
+
+  register={register}
+  error={errors.type}
+
+  options={[
+    {
+      label: "Internship",
+      value: "Internship",
+    },
+
+    {
+      label: "Job",
+      value: "Job",
+    },
+
+    {
+      label: "Scholarship",
+      value: "Scholarship",
+    },
+
+    {
+      label: "Course",
+      value: "Course",
+    },
+  ]}
+
+  required
+/>
+
+<FormInput
+  label="Location"
+  name="location"
+
+  register={register}
+  error={errors.location}
+
+  placeholder="Kabul, Afghanistan"
+
+  required
+/>
+
+<div className="flex items-center gap-2">
+
+  <input
+    type="checkbox"
+
+    {...register("isRemote")}
+
+    className="h-4 w-4"
+  />
+
+  <label>
+    Remote Opportunity
+  </label>
+
+</div>
+
+<FormInput
+  label="Salary"
+  name="salary"
+
+  register={register}
+  error={errors.salary}
+
+  placeholder="Unpaid / $500 per month"
+/>
+
+<FormSelect
+  label="Experience Level"
+  name="experience"
+
+  register={register}
+  error={errors.experience}
+
+  options={[
+    {
+      label: "Beginner",
+      value: "Beginner",
+    },
+    {
+      label: "Intermediate",
+      value: "Intermediate",
+    },
+    {
+      label: "Advanced",
+      value: "Advanced",
+    },
+  ]}
+
+  required
+/>
+
+<FormTextarea
+  label="Opportunity Description"
+
+  name="description"
+
+  register={register}
+
+  error={errors.description}
+
+  placeholder="Describe this opportunity..."
+
+  rows={6}
+
+  required
+/>
+
+<FormTextarea
+  label="Company Description"
+
+  name="companyDescription"
+
+  register={register}
+
+  error={errors.companyDescription}
+
+  placeholder="Describe the company or organization..."
+
+  rows={5}
+
+  required
+/>
+<DynamicListField
+  label="Requirements"
+
+  name="requirements"
+
+  control={control}
+
+  register={register}
+
+  errors={errors}
+/>
+
+<DynamicListField
+  label="Benefits"
+
+  name="benefits"
+
+  control={control}
+
+  register={register}
+
+  errors={errors}
+/>
+
+<FormInput
+  label="Application Deadline"
+  name="deadline"
+  type="date"
+  register={register}
+  error={errors.deadline}
+  required
+/>
+
+<FormInput
+  label="Application Link"
+  name="applyLink"
+  register={register}
+  error={errors.applyLink}
+  placeholder="https://example.com/apply"
+  required
+/>
+
+    <button
+      type="submit"
+      className="
+        rounded-lg
+        bg-blue-600
+        px-6
+        py-2
+        text-white
+      "
+    >
+      Submit
+    </button>
+
+
+  </form>
+
+
+   
   );
 }

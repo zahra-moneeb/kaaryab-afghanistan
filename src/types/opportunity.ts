@@ -1,3 +1,7 @@
+
+export interface ListItem {
+  value: string;
+}
 export interface Opportunity {
   id: number;
   title: string;
@@ -11,8 +15,8 @@ export interface Opportunity {
   salary: string;
   experience: string;
   description: string;
-  requirements: string[];
-  benefits: string[];
+  requirements: ListItem[];
+  benefits: ListItem[];
   deadline: string;
   postedAt: string;
   applyLink: string;
