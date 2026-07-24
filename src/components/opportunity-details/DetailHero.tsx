@@ -1,3 +1,4 @@
+
 import {
   MapPin,
   CalendarDays,
@@ -5,6 +6,8 @@ import {
   Wifi,
   ArrowLeft,
   ArrowUpRight,
+   Pencil,
+  Trash2,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -66,16 +69,102 @@ export default function DetailHero({ opportunity }: DetailHeroProps) {
           </div>
 
           {/* Primary action */}
-          <Link
-            href="#apply"
-            className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-6 py-3 font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:from-indigo-500 hover:to-violet-500 active:scale-98 dark:from-violet-500 dark:to-purple-500 dark:hover:from-violet-400 dark:hover:to-purple-400"
-          >
-            Apply Now
-            <ArrowUpRight
-              size={18}
-              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </Link>
+{/* Actions */}
+<div className="flex flex-wrap items-center gap-3">
+
+    <Link
+      href="#apply"
+      className="
+        group
+        inline-flex
+        items-center
+        gap-2
+        rounded-xl
+        bg-gradient-to-r
+        from-indigo-600
+        to-violet-600
+        px-6
+        py-3
+        font-semibold
+        text-white
+        shadow-md
+        transition-all
+        duration-200
+        hover:-translate-y-0.5
+        hover:shadow-lg
+      "
+    >
+      Apply Now
+
+      <ArrowUpRight
+        size={18}
+        className="
+          transition-transform
+          duration-200
+          group-hover:translate-x-0.5
+          group-hover:-translate-y-0.5
+        "
+      />
+    </Link>
+
+
+    <Link
+      href={`/opportunities/${opportunity.id}/edit`}
+      className="
+        inline-flex
+        items-center
+        gap-2
+        rounded-xl
+        border
+        border-indigo-300
+        bg-white
+        px-5
+        py-3
+        font-medium
+        text-indigo-700
+        transition-all
+        hover:bg-indigo-50
+        dark:border-white/10
+        dark:bg-white/10
+        dark:text-white
+        dark:hover:bg-white/20
+      "
+    >
+      <Pencil size={18} />
+
+      Edit
+    </Link>
+
+
+    <button
+      type="button"
+      className="
+        inline-flex
+        items-center
+        gap-2
+        rounded-xl
+        border
+        border-red-300
+        bg-white
+        px-5
+        py-3
+        font-medium
+        text-red-600
+        transition-all
+        hover:bg-red-50
+        dark:border-red-500/30
+        dark:bg-white/10
+        dark:text-red-400
+        dark:hover:bg-red-500/10
+      "
+      
+    >
+      <Trash2 size={18} />
+
+      Delete
+    </button>
+
+  </div>
         </div>
 
         {/* Info row — glass chips */}

@@ -1,7 +1,10 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Opportunity } from "@/types/opportunity";
+import { useRouter } from "next/navigation";
 
 import {
   opportunitySchema,
@@ -13,56 +16,142 @@ import FormTextarea from "@/components/ui/FormTextarea";
 import FormSelect from "@/components/ui/FormSelect";
 import DynamicListField from "@/components/ui/DynamicListField";
 
-export default function OpportunityForm() {
+
+
+type OpportunityFormProps = {
+  initialData?: Opportunity;
+};
+
+export default function OpportunityForm({initialData}: 
+  OpportunityFormProps) {
 
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors ,  isSubmitting, },
   } = useForm<OpportunityFormData>({
     resolver: zodResolver(opportunitySchema),
+    defaultValues: {
+
+      title: initialData?.title ?? "",
+
+      company: initialData?.company ?? "",
+
+      logo: initialData?.logo ?? "",
+
+      opportunityType:
+        initialData?.opportunityType ?? "",
+
+      category:
+        initialData?.category ?? "",
+
+      type:
+        initialData?.type ?? "",
+
+      location:
+        initialData?.location ?? "",
+
+      isRemote:
+        initialData?.isRemote ?? false,
+
+      salary:
+        initialData?.salary ?? "",
+
+      experience:
+        initialData?.experience ?? "",
+
+      description:
+        initialData?.description ?? "",
+
+      companyDescription:
+        initialData?.companyDescription ?? "",
+
+      deadline:
+        initialData?.deadline ?? "",
+
+      applyLink:
+        initialData?.applyLink ?? "",
+
+      requirements:
+        initialData?.requirements ?? [],
+
+      benefits:
+        initialData?.benefits ?? [],
+
+    }
   });
 
+const router = useRouter();
 
-  //form submit
 const onSubmit = async (
   data: OpportunityFormData
 ) => {
- console.log("Submit clicked");
-  console.log(data);
+
   try {
 
-    const response = await fetch(
-      "/api/opportunities",
-      {
-        method: "POST",
+    let response;
 
-        headers: {
-          "Content-Type": "application/json",
-        },
+    if (initialData) {
 
-        body: JSON.stringify(data),
-      }
-    );
+      response = await fetch(
+        `/api/opportunities/${initialData.id}`,
+        {
+          method: "PUT",
 
+          headers: {
+            "Content-Type": "application/json",
+          },
 
-    if (!response.ok) {
-      throw new Error(
-        "Failed to create opportunity"
+          body: JSON.stringify(data),
+        }
       );
+
+    } else {
+
+      response = await fetch(
+        "/api/opportunities",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(data),
+        }
+      );
+
     }
 
 
-    const newOpportunity =
+    if (!response.ok) {
+
+      throw new Error(
+        initialData
+          ? "Failed to update opportunity"
+          : "Failed to create opportunity"
+      );
+
+    }
+
+
+    const savedOpportunity =
       await response.json();
+
+    router.push(
+  `/opportunities/${savedOpportunity.id}`
+);
+
+router.refresh();
 
 
     console.log(
-      "Created:",
-      newOpportunity
+      initialData
+        ? "Updated:"
+        : "Created:",
+      savedOpportunity
     );
-
 
   } catch (error) {
 
@@ -72,14 +161,13 @@ const onSubmit = async (
 
 };
 
-  return (
+ return (
     
    
   <form
-    // onSubmit={handleSubmit(onSubmit)}
-    // className="space-y-6"
+    
 
-      onSubmit={handleSubmit(
+   onSubmit={handleSubmit(
     onSubmit,
     (errors) => {
       console.log("Validation Errors:", errors);
@@ -359,23 +447,34 @@ const onSubmit = async (
   required
 />
 
-    <button
-      type="submit"
-      className="
-        rounded-lg
-        bg-blue-600
-        px-6
-        py-2
-        text-white
-      "
-    >
-      Submit
-    </button>
+ <button
+  type="submit"
+  disabled={isSubmitting}
+  className="
+    rounded-lg
+    bg-blue-600
+    px-6
+    py-2
+    text-white
+    disabled:cursor-not-allowed
+    disabled:opacity-50
+  "
+>
+  {
+    isSubmitting
+      ? initialData
+        ? "Updating..."
+        : "Creating..."
+      : initialData
+        ? "Update Opportunity"
+        : "Create Opportunity"
+  }
+</button>
 
 
   </form>
 
 
-   
-  );
+ );
+ 
 }

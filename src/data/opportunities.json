@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Frontend Developer Internship",
+    "title": "Senior java Developer",
     "company": "GMSPro Afghanistan",
     "logo": "/images/companies/gmspro.png",
     "opportunityType": "Internship",
@@ -13,16 +13,14 @@
     "experience": "Beginner",
     "description": "A great opportunity for students and junior developers to gain real-world experience in frontend development using modern technologies such as React, TypeScript, and Tailwind CSS.",
     "requirements": [
-      "Basic knowledge of HTML, CSS, and JavaScript",
-      "Understanding of React fundamentals",
-      "Basic TypeScript knowledge",
-      "Willingness to learn and work in a team"
+      {
+        "value": "kjkljl"
+      }
     ],
     "benefits": [
-      "Professional work experience",
-      "Certificate of completion",
-      "Opportunity to improve technical skills",
-      "Real-world project experience"
+      {
+        "value": ",mhjhjk"
+      }
     ],
     "companyDescription": "GMSPro is a technology company focused on building modern digital solutions and creating learning opportunities for young developers.",
     "deadline": "2026-08-20",
@@ -32,7 +30,7 @@
   },
   {
     "id": 2,
-    "title": "Python Programming Scholarship",
+    "title": "تشرش Programming Scholarship",
     "company": "Afghan Tech Academy",
     "logo": "/images/companies/academy.png",
     "opportunityType": "Scholarship",
@@ -44,15 +42,14 @@
     "experience": "Beginner",
     "description": "A scholarship program designed for Afghan students who want to learn Python programming and improve their software development skills through structured online education.",
     "requirements": [
-      "Basic computer skills",
-      "Interest in programming",
-      "Commitment to complete the course"
+      {
+        "value": "تناتانتان"
+      }
     ],
     "benefits": [
-      "Free learning materials",
-      "Programming certificate",
-      "Mentorship support",
-      "Online flexible learning"
+      {
+        "value": "نتان"
+      }
     ],
     "companyDescription": "Afghan Tech Academy provides online educational programs to help young people develop digital skills and prepare for technology careers.",
     "deadline": "2026-09-10",
@@ -139,6 +136,84 @@
     "benefits": [
       {
         "value": "ینتبا"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "postedAt": "2026-07-23",
+    "featured": false,
+    "title": "ccr",
+    "company": "تای",
+    "opportunityType": "Job",
+    "category": "Design",
+    "type": "Internship",
+    "location": "Herat",
+    "salary": "20000",
+    "experience": "Advanced",
+    "description": "djkdkjl djlkdjf dkjfd sljdl",
+    "deadline": "2026-07-31",
+    "applyLink": "http://localhost:3000/add-opportunity",
+    "requirements": [
+      {
+        "value": "dkjd sjkdls ljs"
+      }
+    ],
+    "benefits": [
+      {
+        "value": "ینتبا"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "postedAt": "2026-07-23",
+    "featured": false,
+    "title": "ccr",
+    "company": "تای",
+    "opportunityType": "Job",
+    "category": "Design",
+    "type": "Internship",
+    "location": "Herat",
+    "salary": "20000",
+    "experience": "Advanced",
+    "description": "djkdkjl djlkdjf dkjfd sljdl",
+    "deadline": "2026-07-31",
+    "applyLink": "http://localhost:3000/add-opportunity",
+    "requirements": [
+      {
+        "value": "dkjd sjkdls ljs"
+      }
+    ],
+    "benefits": [
+      {
+        "value": "ینتبا"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "postedAt": "2026-07-24",
+    "featured": false,
+    "title": "jdklfjkd",
+    "company": "تای",
+    "opportunityType": "Internship",
+    "category": "Design",
+    "type": "Job",
+    "location": "Herat",
+    "salary": "20000",
+    "experience": "Intermediate",
+    "description": "ddfdf dfdf dfd fdfdf",
+    "deadline": "2026-07-31",
+    "applyLink": "https://example.com/apply",
+    "requirements": [
+      {
+        "value": "dfdfd df"
+      }
+    ],
+    "benefits": [
+      {
+        "value": "dfdfdf"
       }
     ]
   }
