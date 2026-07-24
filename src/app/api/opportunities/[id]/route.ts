@@ -93,3 +93,71 @@ export async function PUT(
   }
 
 }
+
+export async function DELETE(
+  request: Request,
+  {
+    params,
+  }: {
+    params: Promise<{ id: string }>;
+  }
+) {
+
+  try {
+
+    const { id } = await params;
+
+
+    const filePath = path.join(
+      process.cwd(),
+      "src/data/opportunities.json"
+    );
+
+
+    const fileData = fs.readFileSync(
+      filePath,
+      "utf-8"
+    );
+
+
+    const opportunities = JSON.parse(fileData);
+
+
+    const updatedOpportunities =
+      opportunities.filter(
+        (item: Opportunity) =>
+          item.id !== Number(id)
+      );
+
+
+    fs.writeFileSync(
+      filePath,
+      JSON.stringify(
+        updatedOpportunities,
+        null,
+        2
+      )
+    );
+
+
+    return NextResponse.json({
+      message:
+        "Opportunity deleted successfully",
+    });
+
+
+  } catch (error) {
+
+    return NextResponse.json(
+      {
+        message:
+          "Failed to delete opportunity",
+      },
+      {
+        status: 500,
+      }
+    );
+
+  }
+
+}

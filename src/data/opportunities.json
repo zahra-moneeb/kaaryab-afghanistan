@@ -29,35 +29,6 @@
     "featured": true
   },
   {
-    "id": 2,
-    "title": "تشرش Programming Scholarship",
-    "company": "Afghan Tech Academy",
-    "logo": "/images/companies/academy.png",
-    "opportunityType": "Scholarship",
-    "category": "Programming",
-    "type": "Scholarship",
-    "location": "Online",
-    "isRemote": true,
-    "salary": "Free Program",
-    "experience": "Beginner",
-    "description": "A scholarship program designed for Afghan students who want to learn Python programming and improve their software development skills through structured online education.",
-    "requirements": [
-      {
-        "value": "تناتانتان"
-      }
-    ],
-    "benefits": [
-      {
-        "value": "نتان"
-      }
-    ],
-    "companyDescription": "Afghan Tech Academy provides online educational programs to help young people develop digital skills and prepare for technology careers.",
-    "deadline": "2026-09-10",
-    "postedAt": "2026-07-05",
-    "applyLink": "https://example.com/apply",
-    "featured": true
-  },
-  {
     "id": 3,
     "title": "Remote UI/UX Design Course",
     "company": "Design Hub",
@@ -112,32 +83,6 @@
     "deadline": "2026-09-01",
     "applyLink": "https://example.com",
     "companyDescription": "A software company"
-  },
-  {
-    "id": 5,
-    "postedAt": "2026-07-23",
-    "featured": false,
-    "title": "نایاب",
-    "company": "تای",
-    "opportunityType": "Internship",
-    "category": "Technology",
-    "type": "Job",
-    "location": "Herat",
-    "salary": "20000",
-    "experience": "Intermediate",
-    "description": "یتبایتنب هتای ینتاب ینا",
-    "deadline": "2026-07-13",
-    "applyLink": "http://localhost:3000/add-opportunity",
-    "requirements": [
-      {
-        "value": "یبتین"
-      }
-    ],
-    "benefits": [
-      {
-        "value": "ینتبا"
-      }
-    ]
   },
   {
     "id": 6,

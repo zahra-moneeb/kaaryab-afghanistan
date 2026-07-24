@@ -10,6 +10,7 @@ import {
   Trash2,
 } from "lucide-react";
 import Link from "next/link";
+import DeleteButton from "@/components/ui/DeleteButton";
 
 import { Opportunity } from "@/types/opportunity";
 
@@ -136,35 +137,10 @@ export default function DetailHero({ opportunity }: DetailHeroProps) {
     </Link>
 
 
-    <button
-      type="button"
-      className="
-        inline-flex
-        items-center
-        gap-2
-        rounded-xl
-        border
-        border-red-300
-        bg-white
-        px-5
-        py-3
-        font-medium
-        text-red-600
-        transition-all
-        hover:bg-red-50
-        dark:border-red-500/30
-        dark:bg-white/10
-        dark:text-red-400
-        dark:hover:bg-red-500/10
-      "
-      
-    >
-      <Trash2 size={18} />
-
-      Delete
-    </button>
-
-  </div>
+ <DeleteButton
+  id={opportunity.id}
+/>
+ </div>
         </div>
 
         {/* Info row — glass chips */}
