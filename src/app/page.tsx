@@ -94,14 +94,7 @@ export default function HomePage() {
                   </h2>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-3">
-                  <Button variant="primary" className="min-w-36">
-                    Post Job
-                  </Button>
-                  <Button variant="secondary" className="min-w-36 bg-white/10 text-white hover:bg-white/20">
-                    Browse All
-                  </Button>
-                </div>
+             
             </div>
         <OpportunitiesGrid
           featuredOnly

@@ -9,8 +9,8 @@ type OpportunitiesGridProps = {
   limit?: number;
   featuredOnly?: boolean;
 
-  search: string;
-  type: string;
+  search?: string;
+  type?: string;
 };
 
 export default function OpportunitiesGrid({ 
@@ -60,15 +60,15 @@ export default function OpportunitiesGrid({
     opportunity.title?.toLowerCase() || "";
 
 
-  const matchesSearch =
-    title.includes(
-      search?.toLowerCase()
-    );
+const matchesSearch =
+  search === undefined ||
+  search === "" ||
+  title.includes(search.toLowerCase());
 
-
-  const matchesType =
-    type === "" ||
-    opportunity.type === type;
+ const matchesType =
+  !type ||
+  type === "" ||
+  opportunity.type === type;
 
 
   return (

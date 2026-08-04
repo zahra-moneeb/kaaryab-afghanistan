@@ -56,12 +56,12 @@
     "deadline": "2026-10-01",
     "postedAt": "2026-07-10",
     "applyLink": "https://example.com/apply",
-    "featured": false
+    "featured": true
   },
   {
     "id": 4,
     "postedAt": "2026-07-20",
-    "featured": false,
+    "featured": true,
     "title": "Backend Developer",
     "company": "Tech Company",
     "logo": "/images/companies/default.png",
@@ -69,7 +69,7 @@
     "category": "Technology",
     "type": "Full-time",
     "location": "Kabul",
-    "isRemote": false,
+    "isRemote": true,
     "salary": "$500",
     "experience": "Intermediate",
     "description": "Backend Developer Position",
@@ -83,109 +83,5 @@
     "deadline": "2026-09-01",
     "applyLink": "https://example.com",
     "companyDescription": "A software company"
-  },
-  {
-    "id": 6,
-    "postedAt": "2026-07-23",
-    "featured": false,
-    "title": "ccr",
-    "company": "تای",
-    "opportunityType": "Job",
-    "category": "Design",
-    "type": "Internship",
-    "location": "Herat",
-    "salary": "20000",
-    "experience": "Advanced",
-    "description": "djkdkjl djlkdjf dkjfd sljdl",
-    "deadline": "2026-07-31",
-    "applyLink": "http://localhost:3000/add-opportunity",
-    "requirements": [
-      {
-        "value": "dkjd sjkdls ljs"
-      }
-    ],
-    "benefits": [
-      {
-        "value": "ینتبا"
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "postedAt": "2026-07-24",
-    "featured": false,
-    "title": "jdklfjkd",
-    "company": "تای",
-    "opportunityType": "Internship",
-    "category": "Design",
-    "type": "Job",
-    "location": "Herat",
-    "salary": "20000",
-    "experience": "Intermediate",
-    "description": "ddfdf dfdf dfd fdfdf",
-    "deadline": "2026-07-31",
-    "applyLink": "https://example.com/apply",
-    "requirements": [
-      {
-        "value": "dfdfd df"
-      }
-    ],
-    "benefits": [
-      {
-        "value": "dfdfdf"
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "postedAt": "2026-07-27",
-    "featured": false,
-    "title": "this is for  jobs",
-    "company": "erdfdf",
-    "opportunityType": "Job",
-    "category": "Design",
-    "type": "Job",
-    "location": "Herat",
-    "salary": "600",
-    "experience": "Intermediate",
-    "description": "dfkjf dkfjdl ldjfl dljfl",
-    "deadline": "2026-07-09",
-    "applyLink": "https://example.com/apply",
-    "requirements": [
-      {
-        "value": "fdfjdlfjdfd"
-      }
-    ],
-    "benefits": [
-      {
-        "value": "fdfafdff"
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "postedAt": "2026-07-27",
-    "featured": false,
-    "title": "پنجشیر",
-    "company": "یتنیب",
-    "opportunityType": "Scholarship",
-    "category": "Design",
-    "type": "Scholarship",
-    "location": "Kabul, Afghanistan",
-    "salary": "۴۳۲",
-    "experience": "Intermediate",
-    "description": "بتیمنتب یمتبیمتب مینتبمین یمبت",
-    "deadline": "2026-08-06",
-    "applyLink": "http://localhost:3000/add-opportunity",
-    "requirements": [
-      {
-        "value": "نیتبنیمت یبمیتب یمتبیمبت"
-      }
-    ],
-    "benefits": [
-      {
-        "value": "نیتبمکش منیتبین ینبتی یب"
-      }
-    ]
   }
 ]
