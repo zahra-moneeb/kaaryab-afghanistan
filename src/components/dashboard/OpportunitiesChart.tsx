@@ -8,7 +8,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-  TooltipProps,
+  
 } from "recharts";
 import { BarChart3 } from "lucide-react";
 
@@ -21,7 +21,14 @@ type OpportunitiesChartProps = {
   data: ChartItem[];
 };
 
-function CustomTooltip({ active, payload, label }: TooltipProps<number, string>) {
+function CustomTooltip({ active, payload, label }: {
+  active?: boolean;
+  payload?: {
+    value?: number;
+    name?: string;
+  }[];
+  label?: string;
+}) {
   if (!active || !payload || payload.length === 0) return null;
 
   return (
