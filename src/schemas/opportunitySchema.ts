@@ -44,6 +44,14 @@ export const opportunitySchema = z.object({
   applyLink: z
     .string()
     .url("Please enter a valid URL"),
+
+  logo: z.string().optional(),
+
+  isRemote: z.boolean().optional(),
+
+  companyDescription: z
+    .string()
+    .min(20, "Company description must be at least 20 characters"),
     
 requirements: z
   .array(
