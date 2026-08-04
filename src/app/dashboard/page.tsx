@@ -66,7 +66,7 @@ const chartData = Object.entries(opportunitiesByType).map(
 const opportunitiesByLocation = opportunities.reduce(
   (
     acc: Record<string, number>,
-    opportunity
+    opportunity:Opportunity
   ) => {
     const location = opportunity.location;
 
